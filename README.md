@@ -49,6 +49,13 @@ $ minizinc diophantine/main.mzn diophantine/data.dzn
 x = 15 and y = -6
 ```
 
+R input-output
+```
+> result <- mnz_diophantine_equatiion(3, 5, 15)
+> print(result)
+[1] 15 -6
+```
+
 ### Futoshiki Puzzle
 Model to find a solution for [Futoshiki](https://en.wikipedia.org/wiki/Futoshiki) puzzle.
 
@@ -60,4 +67,23 @@ $ minizinc futoshiki/main.mzn futoshiki/data.dzn
 3 5 2 1 4
 1 2 5 4 3
 ----------
+```
+
+R input-output
+```
+> puzzle <- c(0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0);
+> dim(puzzle) <- c(5, 5)
+
+> inequality <- c(0, 4, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 0, 0, 0)
+> dim(inequality) <- c(5, 5)
+
+> result <- mnz_futoshiki(puzzle, inequalities)
+> print(result)
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    5    3    6    2    1
+[2,]    4    6    1    5    2
+[3,]    2    1    4    3    5
+[4,]    3    5    2    1    4
+[5,]    1    2    5    4    3
+
 ```
