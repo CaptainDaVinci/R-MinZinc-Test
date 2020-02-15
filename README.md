@@ -1,4 +1,4 @@
-# R-MinZinc-Test
+# R-MiniZinc-Test
 Test Results for R-MinZinc GSoC'20
 
 ## Task 1
